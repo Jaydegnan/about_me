@@ -90,9 +90,6 @@ for(var x = 0; x <6; x++) {
 
 }
 alert('You got ' + scoreKeeper + ' questions right, not bad ' + userName + '!');
-// if ((friend == 'y' || houseIsland === 'n') || (friend === 'yes' || houseIsland === 'no')) {
-// alert
-// }
 
 
 // var kids = prompt('how many kids do you have?');
