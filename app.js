@@ -1,52 +1,95 @@
 'use strict';
 
-var questionOne = prompt('Have I been to disneyworld?');
-if (questionOne.toLowerCase() === 'yes' || questionOne.toLowerCase() === 'y') {
+var scoreKeeper = 0;
+var userName = prompt('what is your name?');
+alert ('what a pretty name!');
+var questionOne = prompt('Have I been to disneyworld?').toLowerCase();
+if (questionOne === 'yes' || questionOne === 'y') {
   alert ('Its the happiest place on earth!');
   console.log('question one correct');
-} else if (questionOne.toLowerCase() === 'no' || questionOne.toLowerCase() === 'n') {
-  alert ('Actually I have and it was magical');
+  scoreKeeper++;
+} else if (questionOne === 'no' || questionOne === 'n') {
+  alert ('Actually I have ' + userName + ' and it was magical');
   console.log('question one incorrect' );
 }
-var questionTwo = prompt('Do I have 6 siblings?');
-if (questionTwo.toLowerCase() === 'yes' || questionTwo.toLowerCase() === 'y') {
+var questionTwo = prompt('Do I have 6 siblings?').toLowerCase();
+if (questionTwo === 'yes' || questionTwo === 'y') {
   alert ('Unfortunately I only have 2');
   console.log('question two incorrect');
-} else if (questionTwo.toLowerCase() === 'no' || questionTwo.toLowerCase() === 'n') {
+} else if (questionTwo === 'no' || questionTwo === 'n') {
   alert ('You know me so well!');
   console.log('question two correct');
+  scoreKeeper++;
 }
-var questionThree = prompt('Am I african american?');
-if (questionThree.toLowerCase() === 'yes' || questionThree.toLowerCase() === 'y') {
-  alert ('Might wanna get your eyes checked!');
+var questionThree = prompt('Am I african american?').toLowerCase();
+if (questionThree === 'yes' || questionThree === 'y') {
+  alert ('Might wanna get your eyes checked ' + userName + '!');
   console.log('question three incorrect');
-} else if (questionThree.toLowerCase() === 'no' || questionThree.toLowerCase() === 'n') {
-  alert ('Nothing gets by you!');
+} else if (questionThree === 'no' || questionThree === 'n') {
+  alert ('Nothing gets by you ' + userName + '!');
   console.log('question three correct');
+  scoreKeeper++;
 
 }
 
-var questionFour = prompt('Do I like fishsticks?');
-if (questionFour.toLowerCase() === 'yes' || questionFour.toLowerCase() === 'y') {
+var questionFour = prompt('Do I like fishsticks?').toLowerCase();
+if (questionFour === 'yes' || questionFour === 'y') {
   alert ('love em!');
   console.log('question four correct');
-} else if (questionFour.toLowerCase() === 'no' || questionFour.toLowerCase() === 'n') {
+  scoreKeeper++;
+} else if (questionFour === 'no' || questionFour === 'n') {
   alert ('Who doesnt like fishsticks?!');
   console.log('question four incorrect');
 }
 
-var questionFive = prompt('Do I deserve a lump of coal for christmas?');
-if (questionFive.toLowerCase() === 'yes' || questionFive.toLowerCase() === 'y') {
+var questionFive = prompt('Do I deserve a lump of coal for christmas?').toLowerCase();
+if (questionFive === 'yes' || questionFive === 'y') {
   alert ('absolutely not you jerk!');
   console.log('question five incorrect');
-} else if (questionFive.toLowerCase() === 'no' || questionFive.toLowerCase() === 'n') {
-  alert ('Hey I like you!');
-  console.log('question question five  correct');
+} else if (questionFive === 'no' || questionFive === 'n') {
+  alert ('Hey I like you !');
+  console.log('question question five correct');
+  scoreKeeper++;
 }
 
-// if ((friend == 'y' || houseIsland === 'n') || (friend === 'yes' || houseIsland === 'no')) {
-// alert
-// }
+var count = 0;
+var myNum = 7;
+while (count < 4) {
+  var questionSix = prompt('What number am I thinking between 1 and 10');
+  if (questionSix > myNum) {
+    alert ('your guess is too high! try again');
+    count++;
+  } else if (questionSix < myNum) {
+    alert ('your guess is too low! try again');
+    count++;
+  } else {
+    alert ('that is correct ' + userName + ' way to go!');
+    console.log('question six correct');
+    count = 4;
+    scoreKeeper++;
+  }
+}
+
+var gameAnswers = ['league of legends', 'zelda', 'rocket league' , 'super smash brothers' , 'call of duty'];
+
+for(var x = 0; x <6; x++) {
+  var questionSeven = prompt('What are my favorite video games? You have ' + (6 - x) + ' tries to get one!').toLowerCase();
+  for (var i = 0; i <= 4; i++) {
+    if (questionSeven === gameAnswers[i]) {
+      alert('YIPPEE FOR YOU, ' + userName + '. Here\'s all the possible answers: ' + gameAnswers[0] + ', ' + gameAnswers[1] + ', ' + gameAnswers[2] + ', ' + gameAnswers[3] + ', and ' + gameAnswers[4]);
+      x = 6;
+      console.log('question seven correct');
+      scoreKeeper++;
+    }
+  }
+  if (x === 5) {
+    alert('no more tries, you fail :( but here\'s all the possible answers: ' + gameAnswers[0] + ', ' + gameAnswers[1] + ', ' + gameAnswers[2] + ', ' + gameAnswers[3] + ', and ' + gameAnswers[4]);
+  } else if (x < 5) {
+    alert('not even close bruh, try again');
+  }
+
+}
+alert('You got ' + scoreKeeper + ' questions right, not bad ' + userName + '!');
 
 
 // var kids = prompt('how many kids do you have?');
