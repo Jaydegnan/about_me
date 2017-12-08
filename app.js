@@ -1,56 +1,40 @@
 'use strict';
 
+function checkYes(answer) {
+  if (answer === 'yes' || answer === 'y') {
+    alert('You got it ' + userName);
+    scoreKeeper++;
+  } else {
+    alert('Better luck next time, ' + userName + '...');
+  }
+}
+
+function checkNo(answer) {
+  if (answer === 'no' || answer === 'n') {
+    alert('You got it ' + userName);
+    scoreKeeper++;
+  } else {
+    alert('Try harder next time, ' + userName + '!');
+  }
+}
+
 var scoreKeeper = 0;
 var userName = prompt('what is your name?');
 alert ('what a pretty name!');
 var questionOne = prompt('Have I been to disneyworld?').toLowerCase();
-if (questionOne === 'yes' || questionOne === 'y') {
-  alert ('Its the happiest place on earth!');
-  console.log('question one correct');
-  scoreKeeper++;
-} else if (questionOne === 'no' || questionOne === 'n') {
-  alert ('Actually I have ' + userName + ' and it was magical');
-  console.log('question one incorrect' );
-}
-var questionTwo = prompt('Do I have 6 siblings?').toLowerCase();
-if (questionTwo === 'yes' || questionTwo === 'y') {
-  alert ('Unfortunately I only have 2');
-  console.log('question two incorrect');
-} else if (questionTwo === 'no' || questionTwo === 'n') {
-  alert ('You know me so well!');
-  console.log('question two correct');
-  scoreKeeper++;
-}
-var questionThree = prompt('Am I african american?').toLowerCase();
-if (questionThree === 'yes' || questionThree === 'y') {
-  alert ('Might wanna get your eyes checked ' + userName + '!');
-  console.log('question three incorrect');
-} else if (questionThree === 'no' || questionThree === 'n') {
-  alert ('Nothing gets by you ' + userName + '!');
-  console.log('question three correct');
-  scoreKeeper++;
+checkYes(questionOne);
 
-}
+var questionTwo = prompt('Do I have 6 siblings?').toLowerCase();
+checkNo(questionTwo);
+
+var questionThree = prompt('Am I african american?').toLowerCase();
+checkNo(questionThree);
 
 var questionFour = prompt('Do I like fishsticks?').toLowerCase();
-if (questionFour === 'yes' || questionFour === 'y') {
-  alert ('love em!');
-  console.log('question four correct');
-  scoreKeeper++;
-} else if (questionFour === 'no' || questionFour === 'n') {
-  alert ('Who doesnt like fishsticks?!');
-  console.log('question four incorrect');
-}
+checkYes(questionFour);
 
 var questionFive = prompt('Do I deserve a lump of coal for christmas?').toLowerCase();
-if (questionFive === 'yes' || questionFive === 'y') {
-  alert ('absolutely not you jerk!');
-  console.log('question five incorrect');
-} else if (questionFive === 'no' || questionFive === 'n') {
-  alert ('Hey I like you !');
-  console.log('question question five correct');
-  scoreKeeper++;
-}
+checkNo(questionFive);
 
 var count = 0;
 var myNum = 7;
