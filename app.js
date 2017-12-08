@@ -4,17 +4,23 @@ function checkYes(answer) {
   if (answer === 'yes' || answer === 'y') {
     alert('You got it ' + userName);
     scoreKeeper++;
+    console.log(answer, 'correct');
+    console.log('score', scoreKeeper);
   } else {
     alert('Better luck next time, ' + userName + '...');
+    console.log(answer, 'incorrect');
   }
 }
 
 function checkNo(answer) {
   if (answer === 'no' || answer === 'n') {
     alert('You got it ' + userName);
+    console.log(answer, 'correct');
     scoreKeeper++;
+    console.log('score', scoreKeeper);
   } else {
     alert('Try harder next time, ' + userName + '!');
+    console.log(answer, 'incorrect');
   }
 }
 
@@ -40,12 +46,20 @@ var count = 0;
 var myNum = 7;
 while (count < 4) {
   var questionSix = prompt('What number am I thinking between 1 and 10');
+  console.log(questionSix);
   if (questionSix > myNum) {
     alert ('your guess is too high! try again');
     count++;
+    console.log(count);
+    if (count === 4) {
+      alert('You have run out of guesses!');
+    }
   } else if (questionSix < myNum) {
     alert ('your guess is too low! try again');
     count++;
+    if (count === 4) {
+      alert('You have run out of guesses!');
+    }
   } else {
     alert ('that is correct ' + userName + ' way to go!');
     console.log('question six correct');
